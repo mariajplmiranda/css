@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>CSS Grid</title>
+	    <meta name="description" content="CSS Grid, by Maria João Miranda">
+    	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<!-- <link rel="stylesheet" type="text/css" href="./css/style.css"/> -->
+        <style>
+            html, body, main {
+                height: 100%;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            main {
+                display: grid;
+                grid-template-columns: 50px auto 50px;
+                grid-template-rows: 80px auto 40px;
+                align-content: space-between;
+                grid-template-areas:
+                    "header header header"
+                    ". container ."
+                    "footer footer footer";
+            }
+
+            section div {
+                margin-bottom: 20px;
+            }
+
+            #header,
+            #footer {
+                background-color: #464646;
+                color: white;
+                padding: 20px;
+            }
+
+            #header {
+                grid-area: header;
+            }
+
+            #header h1 {
+                margin: 0;
+            }
+
+            #container {
+                grid-area: container;
+            }
+
+            #pics-list {
+                display: grid;
+                grid-gap: 10px;
+                padding: 30px;
+                background-color: #b8ccc9;
+                grid-template-columns: repeat(5, 150px);
+                justify-content: space-evenly;
+            }
+
+            #flexible-grid {
+                display: grid;
+                grid-gap: 10px;
+                padding: 30px;
+                background-color: #b8ccc9;
+            }
+
+            .bigger {
+                grid-column-start: 4;
+                grid-column-end: 5;
+                justify-self: end;
+            }
+
+            #footer {
+                grid-area: footer;
+            }
+
+
+        </style>
+	</head>
+	<body>
+        <main>
+            <header id="header">
+                <h1>CSS grid</h1>
+            </header>
+            <section id="container">
+                <div id="pics-list">
+                    <div><img src="https://picsum.photos/150/100/?image=0" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=10" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=100" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=20" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=200" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=30" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=300" /></div>
+                    <div><img src="https://picsum.photos/150/100/?image=40" /></div>
+                </div>
+                <div id="flexible-grid">
+                    <div class="bigger"><img src="https://picsum.photos/350/100/?image=400" /></div>
+                </div>
+            </section>
+            <footer id="footer">
+                Footer
+            </footer>
+        </main>
+	</body>
+</html>
